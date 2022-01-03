@@ -15,14 +15,13 @@
     </div>
 
     <div class="form-control">
-        <label for="text">Day & Time</label>
-        <input 
-            type="text" 
-            name="text" 
-            id="day" 
-            placeholder="Add Day & Time"
-            [(ngModel)]="day"
+         <input 
+            matInput [matDatepicker]="picker"
+            (dateChange)="dateChanged($event)"
+        
         >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
     </div>
 
     <div class="form-control-check">
@@ -40,3 +39,7 @@
         value="Save Task" 
         class=" btn btn-block">
 </form>
+
+    
+
+  

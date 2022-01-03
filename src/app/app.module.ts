@@ -13,6 +13,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule  } from '@angular/material-moment-adapter'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input'
 
 const appRoutes: Routes = [
   {path:'', component: TaskComponent},
@@ -35,6 +41,12 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatMomentDateModule,
+    MatInputModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],

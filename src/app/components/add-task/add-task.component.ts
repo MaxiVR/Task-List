@@ -1,7 +1,10 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Moment } from 'momnet';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
 import { Task } from '../../Task';
+
+
 
 @Component({
   selector: 'app-add-task',
@@ -15,6 +18,7 @@ export class AddTaskComponent implements OnInit {
   reminder: boolean = false;
   showAddTask: boolean = false;
   subscription? : Subscription;
+  date = new Date();
 
   constructor(
     private uiService: UiService
@@ -36,4 +40,10 @@ export class AddTaskComponent implements OnInit {
     this.onAddTask.emit(newTask);
   }
 
+  dateChanged($event:any){
+    let text = this.date.toDateString();
+    console.log(text);
+    this.day = text;
+  } 
+  
 }

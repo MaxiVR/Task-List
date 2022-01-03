@@ -2,9 +2,15 @@
   "tasks": [
     {
       "text": "fhgfhfghgfh",
-      "day": "fhgfhfghgfh",
-      "reminder": true,
+      "day": "Mon Jan 03 2022",
+      "reminder": false,
       "id": 1
+    },
+    {
+      "text": "Estudiar",
+      "day": "Mon Jan 03 2022",
+      "reminder": false,
+      "id": 2
     }
   ]
 }
