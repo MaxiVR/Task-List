@@ -14,11 +14,12 @@
         >
     </div>
 
-    <div class="form-control">
-         <input 
-            matInput [matDatepicker]="picker"
-            (dateChange)="dateChanged($event)"
+    <div class="form-control date">
         
+        <input 
+            matInput [matDatepicker]="picker"
+            placeholder="Add Day & Time"
+            (dateChange)="dateChanged($event)"
         >
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>

@@ -1,3 +1,7 @@
 .add-form{
     margin-bottom: 30px;
 }
+
+.date{
+    display: flex;
+}

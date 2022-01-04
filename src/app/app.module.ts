@@ -19,6 +19,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatSliderModule } from '@angular/material/slider';
 import { MatInputModule } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule, NgxMatNativeDateModule, } from '@angular-material-components/datetime-picker';
+
+
 
 const appRoutes: Routes = [
   {path:'', component: TaskComponent},
@@ -47,6 +52,10 @@ const appRoutes: Routes = [
     MatSliderModule,
     MatMomentDateModule,
     MatInputModule,
+    NgxMatTimepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatNativeDateModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],

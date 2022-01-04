@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Moment } from 'momnet';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
 import { Task } from '../../Task';
@@ -16,9 +15,11 @@ export class AddTaskComponent implements OnInit {
   text: string = "";
   day: string = "";
   reminder: boolean = false;
+  vencida: boolean = false;
   showAddTask: boolean = false;
   subscription? : Subscription;
-  date = new Date();
+  myDate = new Date();
+  myDay = new Date();
 
   constructor(
     private uiService: UiService
@@ -35,15 +36,23 @@ export class AddTaskComponent implements OnInit {
       alert('Please add task!')
       return
     }
-    const {text, day, reminder} = this;
-    const newTask = {text, day, reminder};
+    const {text, day, reminder, vencida} = this;
+    const newTask = {text, day, reminder, vencida};
     this.onAddTask.emit(newTask);
   }
 
   dateChanged($event:any){
-    let text = this.date.toDateString();
-    console.log(text);
-    this.day = text;
-  } 
+    console.log($event.value._d.toLocaleDateString());
+    this.myDay = $event.value._d;
+    this.day = $event.value._d.toLocaleDateString();
+    this.myDate.setHours(0, 0, 0, 0); //Pone las hh, mm, ss en 0 para comparar solo el día con myDay
+    if (this.myDay.getTime() < this.myDate.getTime()){
+      this.vencida = true;
+      console.log("Vencida");
+    }else{
+      this.vencida = false;
+    }
+    
+  }
   
 }
